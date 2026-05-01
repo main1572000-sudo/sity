@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+
+<body>
+    <header>
+        <div id='fordev'>
+            <nav id='fornav'>
+                <ul id='forul'>
+                    <li><a href="{%url 'mainpage' %}">Main      </a></li>
+                    <li><a href="{%url 'aboutpage'%}">About     </a></li>
+                    <li><a href="{%url 'formpage' %}">Sign-In    </a></li>
+                    <li><a href="{%url 'signypage'%}">signed-recently</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {%block body%}
+        {%endblock%}
+    </main>
+
+    <footer>
+        {% include 'footer.html'%}
+    </footer>
+</body>
+
+</html>

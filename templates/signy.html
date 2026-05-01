@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% comment %} ............................ {% endcomment %}
+{%block title%}
+    SignUp
+{%endblock%}
+{% comment %} ............................ {% endcomment %}
+{%block body%}
+    <h1>Members : </h1>
+    {%for x in data%}
+        <ul>
+            <li>{{x.name}}</li>
+        </ul>
+    {%endfor%}
+{%endblock%}

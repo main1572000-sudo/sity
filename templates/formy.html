@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0f172a;
+            /* لون الخلفية الأساسي */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* حاوية الفورم لإضافة خلفية بسيطة لها أيضاً إذا أردت */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            background-color: #1e293b;
+            /* خلفية داكنة خفيفة للفورم نفسه */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* تنسيق العنوان */
+        h2 {
+            color: white;
+            text-align: center;
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        .input-box {
+            position: relative;
+            width: 300px;
+            /* زيادة العرض قليلاً */
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            /* تغيير الخلفية من شفافة إلى لون داكن مميز */
+            background-color: #0f172a;
+            border: 2px solid #38bdf8;
+            outline: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        /* تغيير لون الحدود عند التركيز */
+        input:focus {
+            border-color: #7dd3fc;
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+        }
+
+        label {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            color: #94a3b8;
+            pointer-events: none;
+            transition: 0.3s;
+            /* جعل خلفية الليبل مطابقة لخلفية الحقل */
+            background-color: #0f172a;
+            padding: 0 5px;
+        }
+
+        input:focus+label,
+        input:valid+label {
+            top: -10px;
+            font-size: 12px;
+            color: #38bdf8;
+        }
+
+        /* تنسيق زر الإرسال */
+        input[type="submit"] {
+            background-color: #38bdf8;
+            color: #0f172a;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #7dd3fc;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(0);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+</head>
+
+<body>
+    <form method = 'POST'>
+        {% csrf_token %}
+        <h2>Sign Up</h2>
+        {{ml}}
+        {% comment %} <div class="input-box">
+            <input type="text" required name='username'>
+            <label>UserName</label>
+        </div>
+
+        <div class="input-box">
+            <input type="password" required name ='password'>
+            <label>PassWord</label>
+        </div>
+
+        <div class="input-box">
+            <input type="email" required name='email'>
+            <label>Email</label>
+        </div> {% endcomment %}
+
+        <input type="submit" value="Register Now">
+    </form>
+</body>
+
+</html>

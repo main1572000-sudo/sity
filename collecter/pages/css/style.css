@@ -1,0 +1,166 @@
+/* Add this to your <body> or main wrapper */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#forfooter {
+    margin-top: auto;
+    /* This pushes the footer to the bottom */
+}
+
+/* 1. Basic Reset & Font */
+#fordev {
+    background-color: #ffffff;
+    /* Modern clean white or use #1a1a1a for dark mode */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 2rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 2. Navigation Container */
+#fornav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    /* Adjusts items to the right if you add a logo later */
+    align-items: center;
+}
+
+/* 3. The List (Flexbox) */
+#forul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    /* Modern spacing between links */
+}
+
+/* 4. Individual Link Styling */
+#forul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+/* 5. Hover Effects (Animated Underline) */
+#forul li a:hover {
+    color: #007bff;
+    /* A modern blue accent */
+}
+
+#forul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+#forul li a:hover::after {
+    width: 100%;
+}
+
+/* 6. Special Styling for the Sign-In "Button" */
+/* If you want one link to stand out like a button */
+#forul li:nth-child(3) a {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+}
+
+#forul li:nth-child(3) a:hover {
+    background-color: #0056b3;
+}
+
+#forul li:nth-child(3) a::after {
+    display: none;
+    /* Remove underline for the button version */
+}
+
+/* 1. Footer Container */
+#forfooter {
+    background-color: #1a1a1a;
+    /* Dark modern charcoal */
+    color: #ffffff;
+    padding: 4rem 2rem 1rem 2rem;
+    font-family: 'Inter', sans-serif;
+    margin-top: 50px;
+    /* Space between content and footer */
+}
+
+/* 2. Layout Grid */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* 3. Section Styling */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: #007bff;
+    /* Matching your navbar blue */
+    margin-bottom: 1.2rem;
+}
+
+.footer-section p {
+    color: #b3b3b3;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* 4. Footer Link Styling */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-section ul li a:hover {
+    color: #ffffff;
+}
+
+/* 5. Bottom Copyright Bar */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #666;
+    font-size: 0.8rem;
+}
