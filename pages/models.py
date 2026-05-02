@@ -2,10 +2,10 @@ from django.db import models
 from datetime import date
 # Create your models here.
 class Member(models.Model):
-    name = models.CharField(max_length=20,default='name')
-    password = models.CharField(default='password')
-    email = models.EmailField(default='email')
-    date = models.DateField(default=date.today(),blank=True)
+    name = models.CharField(max_length=20)
+    password = models.CharField()
+    email = models.EmailField()
+    date = models.DateField(default=date.today())
     # def __str__(self): 
     #     return self.name
 

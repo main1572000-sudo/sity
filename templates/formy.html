@@ -108,24 +108,16 @@
 </head>
 
 <body>
-    <form method = 'POST'>
+    <form method="POST">
         {% csrf_token %}
         <h2>Sign Up</h2>
-        {{ml}}
-        {% comment %} <div class="input-box">
-            <input type="text" required name='username'>
-            <label>UserName</label>
-        </div>
 
-        <div class="input-box">
-            <input type="password" required name ='password'>
-            <label>PassWord</label>
-        </div>
-
-        <div class="input-box">
-            <input type="email" required name='email'>
-            <label>Email</label>
-        </div> {% endcomment %}
+        {% for field in ml %}
+            <div class="input-box">
+                {{ field }}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            </div>
+        {% endfor %}
 
         <input type="submit" value="Register Now">
     </form>
