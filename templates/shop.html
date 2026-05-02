@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% comment %} ............................ {% endcomment %}
+{%block title%}
+    Shop
+{%endblock%}
+{% comment %} ............................ {% endcomment %}
+{% block body %}
+    <h1 style="text-align: center;">متجر الهواتف والكمبيوتر</h1>
+
+    <!-- الحاوية الرئيسية للمنتجات -->
+    <div class="products-container">
+        {% for x in product %}
+        
+            <div class="product-card">
+                <div class="product-image">
+                    {% if x.image %}
+                        <a href="{% url 'product_detail' x.id %}"><img src="{{ x.image.url }}" alt="{{ x.name }}"></a>
+                    {% else %}
+                        <div class="no-image"><img src="none.png"></div>
+                    {% endif %}
+                </div>
+                <div class="product-info">
+                    <h3>{{ x.name }}</h3>
+                    <p class="price">{{ x.price }} $</p>
+                    <button class="buy-btn">إضافة للسلة</button>
+                </div>
+            </div>
+        
+        {% endfor %}
+    </div>
+{% endblock %}

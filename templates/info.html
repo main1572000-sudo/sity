@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{%block body%}
+<table class="styled-table">
+    <thead>
+        <tr> <!-- يجب وضع td أو th داخل وسم tr -->
+            <th>Name</th>
+            <th>Email</th>
+            <th>Signed Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.date}}</td>
+        </tr>
+    </tbody>
+</table>
+{%endblock%}
