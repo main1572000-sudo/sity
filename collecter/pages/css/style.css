@@ -1,10 +1,66 @@
 /* Add this to your <body> or main wrapper */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/26297.jpg')
+
+}
+
+main {
+    flex: 1;
+    /* هذا السطر السحري: سيجعل المحتوى يمتد ليملأ أي فراغ متبقي */
+}
+
+footer {
+    /* background-color: #333; */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+#image {
+    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/26297.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    /* تسيط العناصر أفقياً */
+    align-items: center;
+    /* تسيط العناصر عمودياً */
+    text-align: center;
+    color: rgb(0, 0, 0);
+    /* لون النص فوق الصورة */
+    font-size: 2.25rem;
+    font-family: 'Cairo', sans-serif;
+}
+
+h1 {
+    /* تجربة مقاس كبير جداً للعنوان الرئيسي */
+    font-size: 3rem;
+
+    /* جعل الخط عريضاً وواضحاً */
+    font-weight: bold;
+
+    /* إضافة ظل بسيط للنص ليظهر بوضوح فوق الصورة */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    /* تحسين المسافة بين السطور */
+    line-height: 1.2;
+
+    margin-bottom: 20px;
 }
 
 #forfooter {
@@ -164,4 +220,198 @@ body {
 .footer-bottom p {
     color: #666;
     font-size: 0.8rem;
+}
+
+/* تنسيق الحاوية لتكون مرنة وتوزع العناصر بجانب بعضها */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* للسماح للعناصر بالنزول لسطر جديد إذا انتهت المساحة */
+    gap: 20px;
+    /* مسافة بين المنتجات */
+    justify-content: center;
+    /* توسيط المنتجات في الصفحة */
+    padding: 20px;
+}
+
+/* تنسيق بطاقة المنتج الواحدة */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    /* عرض ثابت لكل بطاقة */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    background-color: #fff;
+    text-align: center;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* تنسيق الصورة داخل البطاقة */
+.product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    /* للحفاظ على أبعاد الصورة دون تشويهها */
+    background-color: #f9f9f9;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.price {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.buy-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* إزالة التنسيقات الافتراضية للروابط */
+.product-link {
+    text-decoration: none;
+    /* إزالة الخط السفلي */
+    color: inherit;
+    /* جعل اللون يرث من العناصر الأصلية (لا يصبح أزرق) */
+    display: block;
+    /* ليغطي الرابط كامل مساحة الكارت */
+}
+
+/* إضافة تأثير بسيط عند مرور الماوس ليعرف المستخدم أنه رابط */
+.product-card:hover {
+    transform: translateY(-5px);
+    /* يرتفع الكارت قليلاً */
+    transition: 0.3s;
+    border-color: #3498db;
+    /* تغيير لون الإطار */
+}
+
+.view-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* تنسيق الحاوية العامة للجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* لمنع تكرار الحدود بين الخلايا */
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* ظل خفيف لإعطاء عمق */
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    /* لضمان ظهور الحواف المستديرة */
+}
+
+/* تنسيق رأس الجدول (العناوين) */
+thead {
+    background-color: #009879;
+    /* لون أخضر احترافي */
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* تنسيق الخلايا (العناوين والمحتوى) */
+th,
+td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+    /* حدود خفيفة جداً */
+}
+
+/* تنسيق الصفوف */
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+/* تلوين الصفوف الفردية بلون مختلف (Zebra Stripes) */
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* تلوين الصف الأخير بحد سفلي سميك */
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* تأثير عند تمرير الفأرة على الصف */
+tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* تحسين شكل الإيميل بجعله بلون مختلف قليلاً */
+td:nth-child(2) {
+    color: #34495e;
+    font-style: italic;
+}
+
+.clean-link {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    /* خط سفلي مخفي */
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.clean-link:hover {
+    color: #009879;
+    /* تغيير اللون عند التمرير */
+    border-bottom: 2px solid #009879;
+    /* إظهار الخط السفلي بلون محدد */
+}
+
+#linky {
+    text-decoration: none;
+    /* إزالة الخط السفلي */
+    color: #ffffff;
+    /* لون النص */
+    background-color: #007bff;
+    /* لون الخلفية الأزرق */
+    padding: 8px 16px;
+    /* مسافات داخلية */
+    border-radius: 5px;
+    /* حواف مستديرة */
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    /* لكي يعمل الـ Padding بشكل صحيح */
+    transition: all 0.3s ease;
+    /* تأثير ناعم عند التغيير */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* تأثير عند تمرير الفأرة (Hover) */
+#linky:hover {
+    background-color: #0056b3;
+    /* لون أغمق قليلاً */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+    /* رفعة بسيطة للأعلى */
+}
+
+/* تأثير عند الضغط */
+#linky:active {
+    transform: translateY(0);
 }
