@@ -14,7 +14,9 @@ def shop(request):
 
 def formy(request):
     if request.method == 'POST':
-        MemberLogin(request.POST).save()
+        x=MemberLogin(request.POST)
+        if x.is_valid():
+            x.save()
         
     return render(request,'formy.html',{'ml':MemberLogin})
 
